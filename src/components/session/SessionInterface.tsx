@@ -186,20 +186,14 @@ const SessionInterface = ({ prompt }: SessionInterfaceProps) => {
   };
 
   // ✅ إرسال النص للباك إند للتحليل
-  const uploadTranscript = async (text: string) => {
-    const res = await fetch("https://talkify-backend-aeqd.onrender.com/analyze-text", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text, duration: elapsedTime }),
-    });
+const API_URL = import.meta.env.VITE_API_URL;
 
-    if (!res.ok) {
-      const msg = await res.text().catch(() => "");
-      throw new Error(`Analyze failed: ${res.status} ${msg}`);
-    }
+const res = await fetch(`${API_URL}/analyze-text`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ text, duration: elapsedTime }),
+});
 
-    return res.json();
-  };
 
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-foreground/95 flex flex-col">
