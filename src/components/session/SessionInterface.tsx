@@ -188,11 +188,23 @@ const SessionInterface = ({ prompt }: SessionInterfaceProps) => {
   // ✅ إرسال النص للباك إند للتحليل
 const API_URL = import.meta.env.VITE_API_URL;
 
-const res = await fetch(`${API_URL}/analyze-text`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ text, duration: elapsedTime }),
-});
+const uploadTranscript = async (text: string) => {
+  const res = await fetch(`${API_URL}/analyze-text`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      text,
+      duration: elapsedTime,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to analyze");
+  }
+
+  return res.json();
+};
+
 
 
   return (
