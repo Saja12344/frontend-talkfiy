@@ -586,7 +586,7 @@ const SessionInterface = ({ prompt }: SessionInterfaceProps) => {
 
   // ✅ إرسال النص للباك إند للتحليل
   const uploadTranscript = async (text: string) => {
-    const res = await fetch("http://localhost:4000/analyze-text", {
+    const res = await fetch("https://talkify-backend-aeqd.onrender.com/analyze-text", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text, duration: elapsedTime }),
