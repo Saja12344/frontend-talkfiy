@@ -22,7 +22,7 @@ const Header = () => {
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-soft">
               <Mic className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">Talkify</span>
+            <span className="text-xl font-bold text-foreground">Talkfiy</span>
           </Link>
 
           {/* Desktop Navigation */}
