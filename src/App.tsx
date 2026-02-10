@@ -9,6 +9,7 @@ import Report from "./pages/Report";
 import Reports from "./pages/Reports";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Workshops from "./pages/workahops";
 
 const queryClient = new QueryClient();
 
