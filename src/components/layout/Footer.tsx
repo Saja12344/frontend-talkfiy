@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Mic className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-foreground">Talkify</span>
+              <span className="text-xl font-bold text-foreground">Talkfiy</span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-4">
               Empowering university students to develop confident communication skills through AI-powered practice and visual feedback.
